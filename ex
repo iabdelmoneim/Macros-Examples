@@ -1,25 +1,4 @@
 
-Public Sub Funwithloops()
-
-Range("A1").Select
-
-Do While ActiveCell.Value <> ""
-
-ActiveCell.Font.Bold = True
-
-ActiveCell.Offset(1, 0).Select
-
-Loop
-
-End Sub
-
-
-
-
-
-
-__________________________________________
-
 
 Public Sub Funwithloops()
  Dim i As Integer
@@ -34,15 +13,26 @@ Public Sub Funwithloops()
     
     ActiveCell.Offset(1, 0).Select
     
-   
+    
+     
      
      i = i + 1
      
  
  Loop
  
+ 
+ Range("A1").Select
+
+Do While ActiveCell.Value <> ""
+
+ActiveCell.Font.Bold = True
+
+ActiveCell.Offset(1, 0).Select
+
+Loop
+ 
 
 End Sub
 
 
-__________________________________________
