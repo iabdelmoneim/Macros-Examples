@@ -10,12 +10,21 @@ Puplic Sub UserSortInput()
     
     userInput = InputBox(PromptMSG)
     
+    If userInput = "1" Then
+        DivisionSort
+    ElseIf userInput = "2" Then
+        CategorySort
+    ElseIf userInput = "3" Then
+        TotalSort
+        
+      End If
+      
 End Sub
 
     
     
 
-
+__________________________________________________________________
 
 Sub DivisionSort()
 '
@@ -29,6 +38,8 @@ Sub DivisionSort()
 
 End Sub
 
+
+__________________________________________________________________
 Sub CategorySort()
 '
 ' Sort List by Category Ascending
@@ -40,6 +51,9 @@ Sub CategorySort()
         DataOption1:=xlSortNormal
 
 End Sub
+
+
+__________________________________________________________________
 
 Sub TotalSort()
 '
