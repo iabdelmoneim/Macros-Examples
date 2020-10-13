@@ -1,0 +1,81 @@
+Puplic Sub UserSortInput()
+    Dim userInput As String
+    Dim PromptMSG As String
+    
+       promptmsg = "Enter a numeric value to sort..." & vbcrlf & _
+          "1 --- Sort by Division" &vbcrlf & _
+          "2 --- Sort by Category & vbcrfl & _
+          "3 --- Sort by Total"
+
+    
+    userInput = InputBox(PromptMSG)
+    
+End Sub
+
+    
+    
+
+
+
+Sub DivisionSort()
+'
+' Sort List by Division Ascending
+'
+
+'
+    Selection.Sort Key1:=Range("A4"), Order1:=xlAscending, Header:=xlGuess, _
+        OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom, _
+        DataOption1:=xlSortNormal
+
+End Sub
+
+Sub CategorySort()
+'
+' Sort List by Category Ascending
+'
+
+'
+    Selection.Sort Key1:=Range("B4"), Order1:=xlAscending, Header:=xlGuess, _
+        OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom, _
+        DataOption1:=xlSortNormal
+
+End Sub
+
+Sub TotalSort()
+'
+' Sort List by Total Sales Ascending
+'
+
+'
+    Selection.Sort Key1:=Range("F4"), Order1:=xlAscending, Header:=xlGuess, _
+        OrderCustom:=1, MatchCase:=False, Orientation:=xlTopToBottom, _
+        DataOption1:=xlSortNormal
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
