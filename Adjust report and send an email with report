@@ -1,0 +1,47 @@
+Sub Dailyreport()
+'
+' Dailyreport Macro
+'
+' Keyboard Shortcut: Ctrl+h
+'
+    Cells.Select
+    Cells.EntireColumn.AutoFit
+    Range("E6").Select
+    ActiveWindow.SmallScroll Down:=-3
+    Range("E2").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.NumberFormat = _
+        "_-* #,##0.000 $_-;-* #,##0.000 $_-;_-* ""-""??? $_-;_-@_-"
+    Range("F2").Select
+    ActiveWindow.SmallScroll Down:=-3
+    Range("C2").Select
+    Range(Selection, Selection.End(xlUp)).Select
+    Range(Selection, Selection.End(xlDown)).Select
+    Selection.NumberFormat = _
+        "_-* #,##0.000 $_-;-* #,##0.000 $_-;_-* ""-""??? $_-;_-@_-"
+    Range("A1:F59").Select
+    Range("B2").Activate
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Range("A1:F59").Select
+    Range("E14").Activate
+    Application.CutCopyMode = False
+    ActiveSheet.ListObjects.Add(xlSrcRange, Range("$A$1:$F$59"), , xlYes).Name = _
+        "Table1"
+    Range("Table1[#All]").Select
+    ActiveSheet.ListObjects("Table1").TableStyle = "TableStyleLight8"
+    Range("Table1").Select
+    Range("E7").Activate
+    ActiveWorkbook.ExportAsFixedFormat Type:=xlTypePDF, Filename:= _
+        "C:\Users\Ibrahim\AppData\Local\Temp\Reportdaily.pdf", Quality:= _
+        xlQualityStandard, IncludeDocProperties:=False, IgnorePrintAreas:=False, _
+        OpenAfterPublish:=False
+    Application.Dialogs(xlDialogSendMail).Show
+End Sub
